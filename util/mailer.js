@@ -12,12 +12,9 @@ module.exports = class Email {
   }
   createTransporter() {
     return nodemailer.createTransport({
-      host: "smtp-mail.outlook.com", // hostname
-      secureConnection: false, // TLS requires secureConnection to be false
-      port: 587, // port for secure SMTP
-      tls: {
-        ciphers: "SSLv3",
-      },
+      host: "smtp.gmail.com",
+      port: 465,
+      secure: true, // use SSL
       auth: {
         user: process.env.SENDGRID_USER,
         pass: process.env.SENDGRID_PASSWORD,
