@@ -4,7 +4,7 @@ const apierror = require("../util/global-error");
 const multer = require("multer");
 const multerStorage = multer.diskStorage({
   destination: (req, file, cb) => {
-    cb(null, "../public/images");
+    cb(null, "./public/images");
   },
   filename: (req, file, cb) => {
     const ext = file.mimetype.split("/")[1];
